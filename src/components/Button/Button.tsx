@@ -7,33 +7,36 @@ interface ButtonProps {
 }
 export const Button = styled.button<ButtonProps>`
   display: inline-block;
-  padding: 0.35em 1.2em;
+  padding: 0.4em 1.3em;
   border: 0.1em solid;
   border-color: ${({ color }) =>
     color === "secondary" ? "transparent" : colorScheme[color]};
   background-color: ${({ color }) =>
     color === "secondary" ? "transparent" : colorScheme[color]};
   margin: 0 0.3em 0.3em 0;
-  border-radius: 1em;
+  border-radius: 0.7em;
   box-sizing: border-box;
   text-decoration: none;
   font-family: ${fontsScheme.primary};
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 700;
   color: ${({ color }) =>
-    color === "secondary" ? colorScheme.primary : colorScheme[color]};
+    color === "secondary" ? colorScheme.primary : colorScheme.secondary};
   text-align: center;
-  transition: all 0.2s;
+  transition: background-color 0.2s;
   cursor: pointer;
   &:hover {
     ${({ color }) =>
       color === "secondary"
         ? `
-          border-bottom: 2px solid ${colorScheme.primary}
+          border-bottom: 0.1em solid ${colorScheme.primary};
+          border-radius: 0.3em;
+
         `
         : `
     color: ${colorScheme[color]};
-    background-color: ${colorScheme[color]};
+    background-color: ${colorScheme.secondary};
+    border: 0.1em solid ${colorScheme.primary}
     `}
   }
 `;

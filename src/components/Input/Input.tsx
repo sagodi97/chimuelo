@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { colorScheme } from "styles/color.scheme";
 import { fontsScheme } from "styles/fonts.scheme";
 
-export const Input = styled.input`
+const shared = css`
   font-size: 1em;
   font-weight: bold;
   font-family: ${fontsScheme.primary};
@@ -17,4 +17,12 @@ export const Input = styled.input`
     color: black;
     font-weight: lighter;
   }
+`;
+
+export const Input = styled.input`
+  ${shared}
+`;
+
+export const Textarea = styled.textarea`
+  ${shared}
 `;
