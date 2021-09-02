@@ -4,6 +4,8 @@ import postService from "services/post.service";
 import { useRecoilValue } from "recoil";
 import { currentUserAtom } from "features/auth/auth.state";
 import { useHistory } from "react-router-dom";
+import { Input, Textarea } from "components/Input/Input";
+import { Button } from "components/Button/Button";
 
 const NewPost = () => {
   const [title, setTitle] = useState("");
@@ -34,21 +36,23 @@ const NewPost = () => {
           uploadPost();
         }}
       >
-        <input
+        <Input
           type="text"
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.currentTarget.value)}
         />
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-          <textarea
+          <Textarea
             value={content}
             onChange={(e) => setContent(e.currentTarget.value)}
-            placeholder="Write your thought here..."
+            placeholder="Write your thoughts here..."
           />
           <div dangerouslySetInnerHTML={{ __html: mdContent }}></div>
         </div>
-        <button type="submit">Upload!</button>
+        <Button color="primary" type="submit">
+          Upload!
+        </Button>
       </form>
     </div>
   );

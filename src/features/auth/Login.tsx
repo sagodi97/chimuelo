@@ -1,6 +1,6 @@
 import { Button } from "components/Button/Button";
 import { Input } from "components/Input/Input";
-import { Title } from "components/Title/Title";
+import { Title } from "components/Text/Text";
 import { useState } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { useRecoilState } from "recoil";

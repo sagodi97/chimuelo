@@ -1,3 +1,4 @@
+import { Button } from "components/Button/Button";
 import { Input } from "components/Input/Input";
 import { useState } from "react";
 import { Redirect, Link } from "react-router-dom";
@@ -44,13 +45,15 @@ const SignUp = () => {
           type="email"
           placeholder="email"
         />
-        <input
+        <Input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="password"
         />
-        <button type="submit">Sign Up</button>
+        <Button color="primary" type="submit">
+          Sign Up
+        </Button>
       </form>
       <small>
         Already have an account? <Link to="signup">Sign in</Link>
